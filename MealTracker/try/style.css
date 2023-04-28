@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    width: 10%;
+    height: 15vh;
+    margin: 1rem;
+    display: none;
+}
+
+#div4 {
+    width: 10%;
+    height: 15vh;
+    margin: 1rem;
+}
+
+#flip {
+    width: 30%;
+    height: 5vh;
+    margin: 1rem 1rem 0rem 1rem;
+    text-align: center;
+}
+
+#panel {
+    width: 30%;
+    height: 20vh;
+    margin: .1rem 1rem 1rem 1rem;
+    text-align: center;
+    display: none;
+}

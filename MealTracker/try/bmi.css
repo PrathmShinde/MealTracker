@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    background-image: linear-gradient(to top right, #44A08D, #093637);
+    height: 100vh;
+}
+
+.row {
+
+    /* border: 1px solid red; */
+    height: 90vh;
+}
+
+.col-6 {
+    border: 3px solid black;
+}
+
+input {
+
+    padding: .5rem;
+}

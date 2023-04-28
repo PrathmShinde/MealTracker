@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQUERY</title>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <script>
+        $(document).ready(function () {
+
+            $("#btn").dblclick(function () {
+                $("p").hide();
+            });
+            $("#bt").click(function () {
+                $("p").hide(1000, function () {
+                    alert("The paragraph is now hidden\nHere we had used callback function");
+                });
+            });
+            $("#ms").mouseenter(function () {
+                $("p").hide();
+            });
+            $("#ml").mouseleave(function () {
+                alert("Bbye,now you can leave...!");
+            });
+            $("#md").mousedown(function () {
+                alert("mousedown event");
+            });
+            $("#mu").mouseup(function () {
+                alert("Mouse Up event");
+            });
+            $("#sh").click(function () {
+                $("p").show();
+            });
+            $("#tg").click(function () {
+                $("p").toggle(1000);
+            });
+
+            //fade events
+            $("#fi").click(function () {
+                $("#div1").fadeToggle();        //fadeIn, fadeOut, fadeTo
+                $("#div2").fadeToggle("slow");
+                $("#div3").fadeToggle(2000);
+            });
+
+            //Silde events
+            $("#sd").click(function () {
+                $("#panel").slideToggle(4000);
+            });
+
+            //Animate
+            $("#am").click(function () {
+                $("#div4").animate({
+
+                    height: '150px'
+                });
+            });
+
+            //stop
+            $("#sp").click(function () {
+                $("#panel").stop();
+            });
+
+            // hover()
+            // The hover() method takes two functions and is a combination of the mouseenter() and mouseleave() methods.
+            // The first function is executed when the mouse enters the HTML element, and the second function is executed when the mouse leaves the HTML element:
+
+            $("#hv").hover(function () {
+                alert("You entered on hover button");
+            },
+                function () {
+                    alert("You leave the button");
+                });
+
+            //focus
+            $("#fc").focus(function () {
+                $("p").css("background-color", "yellow");
+            });
+
+            //blur
+            $("#bl").blur(function () {
+                $("p").css("background-color", "red");
+            });
+
+            // The on() method attaches one or more event handlers for the selected elements.
+            $("#on").on({
+
+                mousedown: function () {
+                    $("h1").css("background-color", "lightblue");
+
+                },
+                mouseup: function () {
+                    alert("Mmmmouseup");
+                }
+            });
+
+            // Get methods ---> text(),html(),val().
+            $("#txt").click(function () {
+
+                var a = $("#para").text();
+                // var a = $("#para").text("gameChanger");
+                console.log(a);
+
+            });
+
+            // Get Attr method
+            $("#av").click(function () {
+                alert($("#att").attr("href"));
+            });
+
+            // Set attr method
+            $("#att").click(function () {
+                $("#att").attr("href", "http://localhost/MealTracker/dashboard.php");
+            });
+
+            // JQuery Add Elements
+
+
+
+        });
+    </script>
+
+    <p id="para"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero cum necessitatibus dolorem, tenetur ab
+        incidunt
+        mollitia excepturi laboriosam, totam optio error obcaecati natus, praesentium veniam. Eveniet maiores eos sunt
+        nemo.</p>
+
+    <h1>Core2web Technologies</h1>
+
+    <div id="div1" class="box bg-warning"></div>
+    <div id="div2" class="box bg-info"></div>
+    <div id="div3" class="box bg-danger"></div>
+    <div id="div4" class="bg-success"></div>
+
+    <div id="flip" class="bg-info">Click here to slidedown</div>
+    <div id="panel" class="bg-info">Hello World</div>
+    <p> <a href="http://localhost/MealTracker/index.php" id="att">Go to login page</a></p>
+
+    <button type="button" class="btn btn-primary" id="bt">Hide</button>
+    <button type="button" class="btn btn-primary" id="btn">Double Click to hide</button>
+    <button type="button" class="btn btn-primary" id="sh"> show</button>
+    <button type="button" class="btn btn-primary" id="ms">mouseenter</button>
+    <button type="button" class="btn btn-primary" id="ml"> mouseleave</button>
+    <button type="button" class="btn btn-primary" id="md"> mousdown</button>
+    <button type="button" class="btn btn-primary" id="mu"> mousup</button>
+    <button type="button" class="btn btn-primary" id="hv"> hover</button>
+    <button type="button" class="btn btn-primary" id="fc"> focus</button>
+    <button type="button" class="btn btn-primary" id="bl"> blur</button>
+    <button type="button" class="btn btn-primary" id="on"> on</button>
+    <button type="button" class="btn btn-primary" id="tg"> toggle</button>
+    <button type="button" class="btn btn-primary" id="fi"> FadeToggle</button>
+    <button type="button" class="btn btn-primary" id="am"> Animate</button>
+    <button type="button" class="btn btn-primary" id="sd"> SlideToggle</button>
+    <button type="button" class="btn btn-primary" id="sp"> Stop</button>
+    <button type="button" class="btn btn-primary" id="txt"> Get text data</button>
+    <button type="button" class="btn btn-primary" id="av"> Get Attribute value</button>
+
+
+</body>
+
+</html>
